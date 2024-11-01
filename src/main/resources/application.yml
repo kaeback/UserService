@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: test
+    password: 1234
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate: 
+        show-sql: true
+        format-sql: true
+
+# 바인딩 파라미터 확인
+logging:
+  level:
+    org:
+      hibernate:
+        orm:
+          jdbc:
+            bind: trace
