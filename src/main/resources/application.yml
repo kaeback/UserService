@@ -8,10 +8,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-    properties:
-      hibernate: 
-        show-sql: true
-        format-sql: true
+    show-sql: true
 
 # 바인딩 파라미터 확인
 logging:
