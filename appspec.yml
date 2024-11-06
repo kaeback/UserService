@@ -1,0 +1,21 @@
+# CodeDeploy의 버전을 의미 0.0으로 고정
+version: 0.0
+os: linux
+files:
+  # source : CodeDeploy에서 전달해 준 파일 중 destination으로 이동시킬 대상을 지정한다. / 로 지정하면 전체 파일을 의미한다.
+  - source:  /
+    # destination : source에서 지정된 파일을 받을 위치
+    destination: /home/ec2-user/webservice/step2/userservice/
+    overwrite: yes
+
+permissions:
+  - object: /
+    pattern: "**"
+    owner: ec2-user
+    group: ec2-user
+
+hooks:
+  ApplicationStart:
+    - location: scripts/deploy.sh
+      timeout: 60
+      runas: ec2-user
