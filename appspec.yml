@@ -1,9 +1,6 @@
-# CodeDeploy에서 EC2로 애플리케이션을 배포할 때 사용하는 설정 파일
-
 # CodeDeploy의 버전을 의미 0.0으로 고정
 version: 0.0
 os: linux
-# 배포할 대상 경로
 files:
   # source : CodeDeploy에서 전달해 준 파일 중 destination으로 이동시킬 대상을 지정한다. / 로 지정하면 전체 파일을 의미한다.
   - source:  /
@@ -11,21 +8,14 @@ files:
     destination: /home/ec2-user/webservice/step2/userservice/
     overwrite: yes
 
-# 파일과 디렉토리의 권한 설정
 permissions:
   - object: /
     pattern: "**"
     owner: ec2-user
     group: ec2-user
 
-# 배포 중 특정 단계에서 실행할 스크립트를 지정
 hooks:
-  # 배포 파일이 전송된 후 애플리케이션 시작 스크립트를 지정
   ApplicationStart:
     - location: scripts/deploy.sh
       timeout: 60
       runas: ec2-user
-	  
-	  
-	  
-	  
