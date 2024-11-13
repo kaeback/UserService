@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPOSITORY=/home/ec2-user/webservice/step2
-PROJECT_NAME=userservice
+PROJECT_NAME=UserService
 
 cd $REPOSITORY
 
