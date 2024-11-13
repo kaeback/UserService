@@ -22,7 +22,7 @@ permissions:
 hooks:
   # 배포 파일이 전송된 후 애플리케이션 시작 스크립트를 지정
   ApplicationStart:
-    - location: deploy.sh
+    - location: scripts/deploy.sh
       timeout: 60
       runas: ec2-user
 	  
